@@ -1,11 +1,18 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 body {
+    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 50px;
 }
 
 .grid {
@@ -15,7 +22,11 @@ body {
 }
 
 .container {
-    border: 2px solid black;
+    border: 1px solid black;
     width: 600px;
     height: 600px;
+}
+
+.size {
+    font-size: 20px;
 }
