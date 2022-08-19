@@ -1,7 +1,7 @@
 function createSquares(elements, box) {
     const square = document.createElement('div');
     square.classList.add('square');
-    square.style.border = '1px solid black';
+    square.style.backgroundColor = 'white';
     for(let i = 0; i < elements * elements; i++) {
         box.appendChild(square.cloneNode(true));
     }
@@ -15,7 +15,8 @@ const squares = document.querySelectorAll('.square');
 
 squares.forEach(square => {
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = "yellow";
+            let randomColor = Math.floor(Math.random()*16777215).toString(16);
+            square.style.backgroundColor = '#' + randomColor;
         });
     }
 )
@@ -34,8 +35,17 @@ size.addEventListener('click', () => {
     const squares = document.querySelectorAll('.square');
     squares.forEach(square => {
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = "yellow";
+            let randomColor = Math.floor(Math.random()*16777215).toString(16);
+            square.style.backgroundColor = '#' + randomColor;
         });
-    }
-)
+    });
+});
+
+const clear = document.querySelector('.clear');
+
+clear.addEventListener('click', () => {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+        square.style.backgroundColor = 'white';
+    });
 });
